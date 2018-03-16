@@ -4,7 +4,7 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Summary  : Parametrized Active Bindings
