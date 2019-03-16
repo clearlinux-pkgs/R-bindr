@@ -4,16 +4,17 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
-Summary  : Parametrized Active Bindings
+Summary  : Provides a simple interface for creating active bindings where the bound function accepts additional arguments.
 Group    : Development/Tools
 License  : MIT
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-bound function accepts additional arguments.
+bindr [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindr.svg?branch=master)](https://travis-ci.org/krlmlr/bindr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindr?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindr) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/bindr/master.svg)](https://codecov.io/github/krlmlr/bindr?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bindr)](https://cran.r-project.org/package=bindr)
+======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
 %prep
 %setup -q -c -n bindr
@@ -23,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523290935
+export SOURCE_DATE_EPOCH=1552719131
 
 %install
+export SOURCE_DATE_EPOCH=1552719131
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523290935
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bindr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bindr || :
 
 
 %files
@@ -89,3 +89,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bindr/help/paths.rds
 /usr/lib64/R/library/bindr/html/00Index.html
 /usr/lib64/R/library/bindr/html/R.css
+/usr/lib64/R/library/bindr/tests/testthat.R
+/usr/lib64/R/library/bindr/tests/testthat/test-create.R
+/usr/lib64/R/library/bindr/tests/testthat/test-error.R
+/usr/lib64/R/library/bindr/tests/testthat/test-payload.R
+/usr/lib64/R/library/bindr/tests/testthat/test-populate.R
