@@ -4,7 +4,7 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Summary  : Provides a simple interface for creating active bindings where the bound function accepts additional arguments.
@@ -24,10 +24,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552744194
+export SOURCE_DATE_EPOCH=1552916386
 
 %install
-export SOURCE_DATE_EPOCH=1552744194
+export SOURCE_DATE_EPOCH=1552916386
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
