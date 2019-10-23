@@ -4,13 +4,14 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Summary  : Provides a simple interface for creating active bindings where the bound function accepts additional arguments.
 Group    : Development/Tools
 License  : MIT
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 bindr [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindr.svg?branch=master)](https://travis-ci.org/krlmlr/bindr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindr?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindr) [![Coverage Status](https://img.shields.io/codecov/c/github/krlmlr/bindr/master.svg)](https://codecov.io/github/krlmlr/bindr?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bindr)](https://cran.r-project.org/package=bindr)
@@ -23,13 +24,13 @@ bindr [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindr.svg?branch=m
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552916386
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571802215
 
 %install
-export SOURCE_DATE_EPOCH=1552916386
+export SOURCE_DATE_EPOCH=1571802215
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -58,12 +59,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  bindr || :
+R CMD check --no-manual --no-examples --no-codoc bindr || :
 
 
 %files
