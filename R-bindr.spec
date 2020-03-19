@@ -4,7 +4,7 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Summary  : Provides a simple interface for creating active bindings where the bound function accepts additional arguments.
