@@ -4,7 +4,7 @@
 #
 Name     : R-bindr
 Version  : 0.1.1
-Release  : 44
+Release  : 45
 URL      : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bindr_0.1.1.tar.gz
 Summary  : Parametrized Active Bindings
@@ -24,10 +24,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640897658
+export SOURCE_DATE_EPOCH=1640980036
 
 %install
-export SOURCE_DATE_EPOCH=1640897658
+export SOURCE_DATE_EPOCH=1640980036
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
